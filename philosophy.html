@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Philosophy</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<style>
+		@font-face {
+			font-family: 'Computer Modern'; 
+			src: url('fonts/cmunbmr.ttf'); /*URL to font*/
+		}
+		body {
+			font-size: 16px;
+			font-family: 'Computer Modern';
+		}
+		.custom-margin {
+			margin-left: 2em;
+			margin-right: 2em;
+		}
+		.navbar-nav>li>a {
+			font-size: 24px;
+			text-transform: uppercase;
+			padding: 0;
+			/*margin-top: 80px;*/
+			color: #e74c3c;
+		}
+		.navbar-nav>li>a {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		.nav>li>a:focus, .nav>li>a:hover {
+			text-decoration: underline;
+			background-color: transparent;
+		}
+		.nav-tabs>li>a:hover {
+			border-color: transparent;
+			border: none;
+		}
+		.nav-tabs>li>a {
+			padding: 0;
+			border: none;
+		}
+		.navbar-nav>li {
+			margin-left: 10%;	
+		}
+		.navbar-nav>li {
+			margin-left: 9vw;
+		}
+		.nav-tabs>li>a {
+			color: #000;
+		}
+		.navbar-brand {
+			padding-top: 10px;
+		}
+		.navbar-brand>img {
+			width: 80px;
+		}
+		.tab-content h4, h4 {
+			margin-bottom: 1em;
+			margin-left: 1em;
+		}
+		.tab-content p, p {
+			text-align: justify;
+		}
+		.navbar-default .navbar-toggle {
+		    border-color: #ddd;
+		}
+		.navbar-toggle {
+			border-color: #000;
+		}
+		.navbar-toggle .icon-bar {
+		    background-color: #000;
+		}
+		/**/
+		/*css*/
+		.nav-tabs, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+			border: none;
+			color: #000
+		}
+		.nav-tabs>li.active>a:hover {
+			text-decoration: underline;
+		}
+		ul.nav-tabs{
+			display: none;
+			width: 100%;
+			margin-bottom: 3em;
+			margin-top: 2em;
+		}
+		.nav-tabs>li {
+			float: none;
+			display: table-cell;
+		}
+		.navbar {
+			margin-bottom: 0;
+		}
+		ul.visible {
+			display: table;
+		}
+		/*Media*/
+		@media screen and (min-width: 1600px) {
+			.navbar-nav>li>a {
+				margin-top: 80px;
+				margin-bottom: 80px;
+			}
+			ul.nav-tabs {
+				margin-bottom: 4em;
+				margin-top: 4em;
+			}
+			.tab-content h4, h4 {
+				margin-bottom: 2em;
+			}
+			.custom-margin {
+				margin-left: 4em;
+				margin-right: 4em;
+			}
+		}
+		/*Media*/
+		@media screen and (min-width: 1600px) {
+			.navbar-nav>li>a {
+				margin-top: 80px;
+				margin-bottom: 80px;
+			}
+			ul.nav-tabs {
+				margin-bottom: 4em;
+				margin-top: 1em;
+			}
+			.tab-content h4 {
+				margin-bottom: 2em;
+			}
+			.custom-margin {
+				margin-left: 4em;
+				margin-right: 4em;
+			}
+			.navbar-brand {
+    			padding-top: 50px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.navbar-brand {
+    			padding: 5px 0 0 0;
+    			margin-left: 15px;
+			}	
+			.navbar-brand>img {
+			     width: auto;
+			     height: 100%;
+			}
+			.navbar-nav>li>a {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			.tab-content h4 {
+				margin-top: 2em;
+				margin-bottom: 1em;
+			}
+			ul.nav-tabs {
+				margin-bottom: 1em;
+				margin-top: 1em;
+			}
+			.tab-content h4 {
+				margin-bottom: 1em;
+			}
+			.custom-margin {
+				margin-left: 1em;
+				margin-right: 1em;
+			}
+			ul.visible, .nav-tabs>li {
+			    /* display: table; */
+			    display: inherit;
+			}
+			.nav-tabs>li {
+			    float: left;
+			    margin-left: 15px;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			.custom-margin {
+			    margin-left: 0;
+			    margin-right: 0;
+			}
+		}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-transparent">
+  <div class="container-fluid custom-margin">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span> 
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="logo.png" alt="" class="img-responsive"></a>
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="index.html">Article</a></li>
+		<li><a href="philosophy.html">Philosophy</a></li>
+		<li><a href="interact.html">Interact</a></li>
+	  </ul>
+	</div>
+  </div>
+</nav>
+
+<div class="container-fluid custom-margin">
+	
+<h4>Philosophy</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
+
+Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
+
+Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
+
+Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
+</div>
+
+				
+
+
+<script>
+  // script
+
+</script>
+
+</body>
+</html>
