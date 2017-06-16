@@ -67,7 +67,7 @@
 			border: none;
 		}
 		
-		.nav-tabs>li>a {
+		.nav-tabs>li>a, ul#filters>li>a {
 			color: #000;
 			text-align: center;
 		}
@@ -78,17 +78,19 @@
 		.nav-tabs>li.active>a:hover {
 			text-decoration: underline;
 		}
-		ul.nav-tabs{
+		ul.nav-tabs, ul#filters{
 			display: none;
 			width: 100%;
 			margin-bottom: 3em;
 			margin-top: 2em;
+			padding-left: 0;
 		}
-		.nav-tabs>li {
+		.nav-tabs>li, ul#filters>li {
 			float: none;
 			display: table-cell;
+			text-align: center;
 		}
-		ul.visible {
+		ul.visible, ul#filters.visible {
 			display: table;
 		}
 		/*nav tabs content*/
@@ -99,15 +101,68 @@
 		.tab-content p {
 			text-align: justify;
 		}
-		
-
+		/*accordion*/
+		#accordion .date {
+			float: right;
+		}
+		#accordion .date:hover{
+			text-decoration: none;
+			cursor: default;
+		}
+		.plus {
+			width: 31px;
+		}
+		.minus {
+			width: 30px;
+		}
+		.collapse-icon {
+			width: 21px;
+			height: 31px;
+			background-image: url(arrows_plus.svg);
+			background-repeat: no-repeat;
+			background-size: 21px 21px;
+			display: block;
+			margin-top: -8px;
+			float: left;
+			margin-right: 10px;
+			background-position: center;
+		}
+		.collapse-icon.minus{
+			width: 21px;
+			height: 31px;
+			background-image: url(arrows_minus.svg);
+			background-size: 20px 20px;
+			margin-top: -8px;
+			background-position: center;
+		}
+		.panel-default>.panel-heading {
+			background-color: transparent;
+		}
+		.panel-default {
+		    border-color: #000;
+		}
+		.panel-group .panel {
+			margin-bottom: 10px;
+		}
+		.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+		     border-top: none; 
+		}
+		.topics-list {
+			text-align: right;
+		}
+		#accordion .sub-date {
+			display: none;
+		}
+		.panel-body {
+			text-align: justify;
+		}
 		/*Media*/
 		@media screen and (min-width: 1600px) {
 			.navbar-nav>li>a {
 				margin-top: 80px;
 				margin-bottom: 80px;
 			}
-			ul.nav-tabs {
+			ul.nav-tabs, ul#filters {
 				margin-bottom: 4em;
 				margin-top: 1em;
 			}
@@ -161,7 +216,7 @@
 				margin-top: 2em;
 				margin-bottom: 1em;
 			}
-			ul.nav-tabs {
+			ul.nav-tabs, ul#filters {
 				margin-bottom: 1em;
 				margin-top: 1em;
 			}
@@ -172,12 +227,15 @@
 				margin-left: 1em;
 				margin-right: 1em;
 			}
-			ul.visible, .nav-tabs>li {
+			ul.visible, .nav-tabs>li, ul#filters>li {
 			    display: inherit;
 			}
-			.nav-tabs>li {
+			.nav-tabs>li, ul#filters>li {
 			    float: left;
 			    margin-left: 15px;
+			}
+			.navbar {
+				margin-bottom: 10px;
 			}
 		}
 		@media screen and (max-width: 480px) {
@@ -185,8 +243,17 @@
 			    margin-left: 0;
 			    margin-right: 0;
 			}
+			#accordion .date {
+				display: none;
+			}
+			#accordion .sub-date {
+				display: inherit;
+				width: 100%;
+				text-align: right;
+				margin-top: -15px;
+			}
 		}
-  </style>
+	</style>
 </head>
 <body>
 
@@ -198,7 +265,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span> 
 	  </button>
-	  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="" class="img-responsive"></a>
+	  <a class="navbar-brand" href="index.html"><img src="cafepsi-nu4.png" alt="" class="img-responsive"></a>
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav navbar-right">
@@ -213,115 +280,109 @@
 
 <div class="container-fluid custom-margin">
 	
-			<ul id="myTabContent" class="nav nav-tabs">
-				<li class="active"><a href="#article_a" data-toggle="tab" aria-expanded="false">Article A</a></li>
-				<li><a href="#article_b" data-toggle="tab" aria-expanded="true">Article B</a></li>
-				<li><a href="#article_c" data-toggle="tab" aria-expanded="true">Article C</a></li>
-				<li><a href="#article_d" data-toggle="tab" aria-expanded="true">Article D</a></li>
-				<li><a href="#article_e" data-toggle="tab" aria-expanded="true">Article E</a></li>
-				<li><a href="#article_f" data-toggle="tab" aria-expanded="true">Article F</a></li>
-				<li><a href="#article_g" data-toggle="tab" aria-expanded="true">Article G</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="article_a">
-					<h4>Article A</h4>
+	<ul id="filters">
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	  <li><a href="" data-category="topic_a">Topic A</a></li>
+	  <li><a href="" data-category="topic_b">Topic B</a></li>
+	  <li><a href="" data-category="topic_c">Topic C</a></li>
+	  <li><a href="" data-category="topic_d">Topic D</a></li>
+	  <li><a href="" data-category="topic_e">Topic E</a></li>
+	  <li><a href="" data-category="topic_f">Topic F</a></li>
+	  <li><a href="" data-category="topic_g">Topic G </a></li>
 
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_b">
-					<h4>Article B</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_c">
-					<h4>Article C</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_d">
-					<h4>Article D</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_e">
-					<h4>Article E</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_f">
-					<h4>Article F</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
-				</div>
-
-				<div class="tab-pane fade" id="article_g">
-					<h4>Article G</h4>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-		Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-		Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-		Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-		Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
+	</ul>
+	
+	<!-- Accordion -->
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="panel panel-default topic_a topic_g topic_f topic_d">
+			<div class="panel-heading" role="tab" id="headingOne">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+						<span class="collapse-icon"></span>Article Title 1: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic A, topic B, topic C, topic D</div>
 				</div>
 			</div>
+		</div>
+		<div class="panel panel-default topic_e topic_c">
+			<div class="panel-heading" role="tab" id="headingTwo">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<span class="collapse-icon"></span>Article Title 2: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic E, topic C</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_f">
+			<div class="panel-heading" role="tab" id="headingThree">
+				<h4 class="panel-title">
+
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<span class="collapse-icon"></span>Article Title 3: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic F</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_g">
+			<div class="panel-heading" role="tab" id="headingFour">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						<span class="collapse-icon"></span>Article Title 4: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic G</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_b">
+			<div class="panel-heading" role="tab" id="headingFive">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						<span class="collapse-icon"></span>Article Title 5: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic B</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<!-- Accodrion End -->
+	
 
 	
 </div>
@@ -334,9 +395,23 @@
 <script>
   // script
   $(".toggle_menu").click(function(){
-	  $("#myTabContent").toggleClass("visible");
+	  $("#filters").toggleClass("visible");
   });
-
+  // filter
+  $("#filters a").click(function() {
+    var category = $(this).data("category");
+    $("#accordion .panel").hide();
+    $("#accordion .panel." + category).show();
+    return false;
+  });
+  // icon swap
+	$(".panel-title a").click(function(){
+		$(this).children().toggleClass("minus");
+		// var parentLocation = $(this).parent();
+		// $(".date",parentLocation).toggleClass("visible");
+		// $(parentLocation + " .date").toggleClass("visible");
+		
+	});
 </script>
 
 </body>
