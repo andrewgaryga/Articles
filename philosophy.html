@@ -11,9 +11,15 @@
 			font-family: 'Computer Modern'; 
 			src: url('fonts/cmunbmr.ttf'); /*URL to font*/
 		}
+		html {
+			position: relative;
+			min-height: 100%;
+		}
 		body {
 			font-size: 16px;
 			font-family: 'Computer Modern';
+			color: #000;
+			margin-bottom: 30px;
 		}
 		.custom-margin {
 			margin-left: 2em;
@@ -97,6 +103,12 @@
 		}
 		.tab-content p, p {
 			text-align: justify;
+		}
+		footer {
+		    position: absolute;
+		    bottom: 0;
+		    width: 100%;
+		    padding-bottom: 10px;
 		}
 		/*Media*/
 		@media screen and (min-width: 1600px) {
@@ -219,7 +231,13 @@ Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendis
 Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
 </div>
 
-				
+<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 text-center"><span class="copyright">&copy; cafe psi 2017.</span></div>
+		</div>
+	</div>
+</footer>				
 
 <!-- jQuery -->
 <script src="bootstrap/jquery.js"></script>
