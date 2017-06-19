@@ -1,0 +1,294 @@
+/*main*/
+@font-face {
+	font-family: 'Computer Modern'; 
+	src: url('fonts/cmunbmr.ttf'); /*URL to font*/
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	font-size: 16px;
+	font-family: 'Computer Modern';
+	color: #000;
+	margin-bottom: 30px;
+}
+.custom-margin {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+/*navigation*/
+.navbar {
+	margin-bottom: 0;
+}
+.navbar-nav>li>a {
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 0;
+	/*margin-top: 80px;*/
+	/*color: #e74c3c;*/
+	/*new-color*/
+	color: #d41400;
+	font-weight: bold;
+}
+.navbar-nav>li>a {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+	text-decoration: underline;
+	background-color: transparent;
+}
+.navbar-nav>li {
+	margin-left: 5vw;
+}
+.navbar-brand {
+	padding-top: 10px;
+}
+.navbar-brand>img {
+	width: 80px;
+}
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+.navbar-toggle {
+	border-color: #000;
+}
+.navbar-toggle .icon-bar {
+    background-color: #000;
+}
+/*nav tabs list*/
+.nav-tabs>li>a:hover {
+	border-color: transparent;
+	border: none;
+}
+.nav-tabs>li>a {
+	padding: 0;
+	border: none;
+}
+
+.nav-tabs>li>a, ul#filters>li>a {
+	color: #000;
+	text-align: center;
+}
+.nav-tabs, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	border: none;
+	color: #000
+}
+.nav-tabs>li.active>a:hover {
+	text-decoration: underline;
+}
+ul.nav-tabs, ul#filters{
+	display: none;
+	width: 100%;
+	margin-bottom: 3em;
+	margin-top: 2em;
+	padding-left: 0;
+}
+.nav-tabs>li, ul#filters>li {
+	float: none;
+	display: table-cell;
+	text-align: center;
+}
+ul.visible, ul#filters.visible {
+	display: table;
+}
+/*nav tabs content*/
+.tab-content h4, h4 {
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+.tab-content p, p {
+	text-align: justify;
+}
+/*accordion*/
+#accordion .date {
+	float: right;
+}
+#accordion .date:hover{
+	text-decoration: none;
+	cursor: default;
+}
+.plus {
+	width: 31px;
+}
+.minus {
+	width: 30px;
+}
+.collapse-icon {
+	width: 21px;
+	height: 31px;
+	background-image: url(arrows_plus.svg);
+	background-repeat: no-repeat;
+	background-size: 21px 21px;
+	display: block;
+	margin-top: -8px;
+	float: left;
+	margin-right: 10px;
+	background-position: center;
+}
+.collapse-icon.minus{
+	width: 21px;
+	height: 31px;
+	background-image: url(arrows_minus.svg);
+	background-size: 20px 20px;
+	margin-top: -8px;
+	background-position: center;
+}
+.panel-default>.panel-heading {
+	background-color: transparent;
+}
+.panel-default {
+    border-color: #000;
+}
+.panel-group .panel {
+	margin-bottom: 10px;
+	display: none;
+}
+.accordion-snacks .panel{
+	display: inherit;
+}
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+     border-top: none; 
+}
+.topics-list {
+	text-align: right;
+}
+#accordion .sub-date {
+	display: none;
+}
+.panel-body {
+	text-align: justify;
+}
+/*footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
+/*articles page*/
+a.article-link {
+	color: #d41400;
+}
+a.back-link {
+	float: right;
+	color: #d41400;
+}
+/*recent*/
+.recent a {
+	display: block;
+}
+.recent-wrap {
+	padding: 15px;
+}
+.recent-wrap-item {
+	border: 1px solid transparent;
+	text-align: center;
+	padding: 15px;
+}
+.recent-wrap-item:hover {
+	border: 1px solid #000;
+	/*-webkit-transition: border-color .5s; 
+	transition: border-color .5s;*/
+} 
+.recent-wrap-item h4 {
+	margin-left: 0;
+}
+/*Media*/
+@media screen and (min-width: 1600px) {
+	.navbar-nav>li>a {
+		margin-top: 80px;
+		margin-bottom: 80px;
+	}
+	ul.nav-tabs, ul#filters {
+		margin-bottom: 4em;
+		margin-top: 1em;
+	}
+	.tab-content h4, h4 {
+		margin-bottom: 2em;
+	}
+	.custom-margin {
+		margin-left: 4em;
+		margin-right: 4em;
+	}
+	.navbar-brand {
+		padding-top: 50px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.navbar-nav>li {
+		margin-left: 9vw;
+	}
+}
+@media screen and (min-width: 980px) { 
+	.navbar-nav>li {
+		margin-left: 7vw;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 890px) { 
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	    margin-left: auto;
+	}
+}
+@media screen and (max-width: 890px) {
+	.navbar-brand {
+		padding: 5px 0 0 0;
+		margin-left: 15px;
+	}	
+	.navbar-brand>img {
+	     width: auto;
+	     height: 100%;
+	}
+	.navbar-nav>li>a {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.custom-margin {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+}
+@media screen and (max-width: 768px) {
+	.tab-content h4, h4 {
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+	ul.nav-tabs, ul#filters {
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	.tab-content h4, h4 {
+		margin-bottom: 1em;
+	}
+	.custom-margin {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	ul.visible, .nav-tabs>li, ul#filters>li {
+	    display: inherit;
+	}
+	.nav-tabs>li, ul#filters>li {
+	    float: left;
+	    margin-left: 15px;
+	}
+	.navbar {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.custom-margin {
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	#accordion .date {
+		display: none;
+	}
+	#accordion .sub-date {
+		display: inherit;
+		width: 100%;
+		text-align: right;
+		margin-top: -15px;
+	}
+}

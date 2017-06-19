@@ -5,193 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" rel="stylesheet">
-	<style>
-		/*main*/
-		@font-face {
-			font-family: 'Computer Modern'; 
-			src: url('fonts/cmunbmr.ttf'); /*URL to font*/
-		}
-		html {
-			position: relative;
-			min-height: 100%;
-		}
-		body {
-			font-size: 16px;
-			font-family: 'Computer Modern';
-			color: #000;
-			margin-bottom: 30px;
-		}
-		.custom-margin {
-			margin-left: 2em;
-			margin-right: 2em;
-		}
-		/*navigation*/
-		.navbar {
-			margin-bottom: 0;
-		}
-		.navbar-nav>li>a {
-			font-size: 24px;
-			text-transform: uppercase;
-			padding: 0;
-			/*margin-top: 80px;*/
-			color: #d41400;
-			font-weight: bold;
-		}
-		.navbar-nav>li>a {
-			margin-top: 40px;
-			margin-bottom: 40px;
-		}
-		.nav>li>a:focus, .nav>li>a:hover {
-			text-decoration: underline;
-			background-color: transparent;
-		}
-		.navbar-nav>li {
-			margin-left: 5vw;
-		}
-		.navbar-brand {
-			padding-top: 10px;
-		}
-		.navbar-brand>img {
-			width: 80px;
-		}
-		.navbar-default .navbar-toggle {
-		    border-color: #ddd;
-		}
-		.navbar-toggle {
-			border-color: #000;
-		}
-		.navbar-toggle .icon-bar {
-		    background-color: #000;
-		}
-		/*nav tabs list*/
-		.nav-tabs>li>a:hover {
-			border-color: transparent;
-			border: none;
-		}
-		.nav-tabs>li>a {
-			padding: 0;
-			border: none;
-		}
-		
-		.nav-tabs>li>a {
-			color: #000;
-		}
-		.nav-tabs, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-			border: none;
-			color: #000
-		}
-		.nav-tabs>li.active>a:hover {
-			text-decoration: underline;
-		}
-		ul.nav-tabs{
-			display: none;
-			width: 100%;
-			margin-bottom: 3em;
-			margin-top: 2em;
-		}
-		.nav-tabs>li {
-			float: none;
-			display: table-cell;
-		}
-		ul.visible {
-			display: table;
-		}
-		/*nav tabs content*/
-		.tab-content h4, h4 {
-			margin-bottom: 1em;
-			margin-left: 1em;
-		}
-		.tab-content p, p {
-			text-align: justify;
-		}
-		footer {
-		    position: absolute;
-		    bottom: 0;
-		    width: 100%;
-		    padding-bottom: 10px;
-		}
-		/*Media*/
-		@media screen and (min-width: 1600px) {
-			.navbar-nav>li>a {
-				margin-top: 80px;
-				margin-bottom: 80px;
-			}
-			ul.nav-tabs {
-				margin-bottom: 4em;
-				margin-top: 4em;
-			}
-			.tab-content h4, h4 {
-				margin-bottom: 2em;
-			}
-			.custom-margin {
-				margin-left: 4em;
-				margin-right: 4em;
-			}
-			.navbar-brand {
-				padding-top: 50px;
-			}
-		}
-		@media screen and (min-width: 1200px) {
-			.navbar-nav>li {
-				margin-left: 9vw;
-			}
-		}
-		@media screen and (min-width: 980px) { 
-			.navbar-nav>li {
-				margin-left: 7vw;
-			}
-		}
-		@media screen and (max-width: 890px) {
-			.navbar-brand {
-				padding: 5px 0 0 0;
-				margin-left: 15px;
-			}	
-			.navbar-brand>img {
-				 width: auto;
-				 height: 100%;
-			}
-			.navbar-nav>li>a {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				text-align: center;
-			}
-			.custom-margin {
-				margin-left: 1em;
-				margin-right: 1em;
-			}
-		}
-		@media screen and (min-width: 768px) and (max-width: 890px) { 
-			.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-			    margin-left: auto;
-			}
-		}
-		@media screen and (max-width: 768px) {
-			.tab-content h4, h4 {
-				margin-top: 2em;
-				margin-bottom: 1em;
-			}
-			ul.nav-tabs {
-				margin-bottom: 1em;
-				margin-top: 1em;
-			}
-			.tab-content h4 {
-				margin-bottom: 1em;
-			}
-			ul.visible, .nav-tabs>li {
-				display: inherit;
-			}
-			.nav-tabs>li {
-				float: left;
-				margin-left: 15px;
-			}
-		}
-		@media screen and (max-width: 480px) {
-			.custom-margin {
-			    margin-left: 0;
-			    margin-right: 0;
-			}
-		}
-  </style>
+	<link rel="stylesheet" href="style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -203,7 +17,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span> 
 	  </button>
-	  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="" class="img-responsive"></a>
+	  <a class="navbar-brand" href="index.html"><img src="cafepsi-nu4.png" alt="" class="img-responsive"></a>
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav navbar-right">
@@ -218,18 +32,59 @@
 
 <div class="container-fluid custom-margin">
 	
-<h4>Snacks</h4>
+<!-- Accordion -->
+<div class="panel-group accordion-snacks" id="accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default topic_a topic_g topic_f topic_d">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+					<span class="collapse-icon"></span>Article Title 1: short description 
+				</a>
+				<span class="date">18<sup>th</sup> May 2017</span>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+			<div class="panel-body">
+				<span class="sub-date">18<sup>th</sup> May 2017</span>
+				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default topic_e topic_c">
+		<div class="panel-heading" role="tab" id="headingTwo">
+			<h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					<span class="collapse-icon"></span>Article Title 2: short description 
+				</a>
+				<span class="date">18<sup>th</sup> May 2017</span>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+			<div class="panel-body">
+				<span class="sub-date">18<sup>th</sup> May 2017</span>
+				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingThree">
+			<h4 class="panel-title">
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra neque. Etiam lectus ipsum, condimentum quis hendrerit at, blandit vitae quam. Integer dapibus bibendum ipsum nec suscipit. Suspendisse tempor tellus eget metus condimentum porta. Curabitur facilisis ipsum tortor, sed bibendum est vulputate eget. Integer aliquet, ex mollis varius tempor, leo nibh eleifend sem, vitae efficitur nisi mi quis quam. Mauris nulla metus, tempor at iaculis et, ullamcorper id mi. Etiam eleifend pellentesque est, ut venenatis nulla feugiat at. Curabitur et elit id justo congue laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin varius quam eget placerat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Proin nec diam a massa iaculis pulvinar. Praesent sodales leo et tristique posuere. Nam molestie fermentum interdum. Duis ultrices nibh at mi blandit, ut rhoncus massa viverra. Donec fermentum eros in purus pretium, vitae pulvinar leo tristique. Ut at bibendum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas nec convallis mauris. Morbi sagittis efficitur metus. Nunc eu velit in magna tempor congue ac id arcu.
-
-Donec molestie eleifend tempus. Curabitur bibendum ipsum vitae ipsum rhoncus, eget iaculis nunc feugiat. In ornare mauris libero, vitae consectetur elit interdum id. Integer sed eros leo. Maecenas eu gravida magna. Nunc vitae ultrices dui, eget rhoncus libero. In blandit vitae neque eget condimentum. Morbi lacinia maximus urna, ac porta nisi. Aenean rhoncus quam ut mi rhoncus commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis vel justo ornare, venenatis nisl et, faucibus orci. Sed tristique condimentum massa ac porttitor. Phasellus imperdiet aliquet ante a cursus.
-
-Quisque odio turpis, tincidunt sit amet dignissim ac, dapibus in quam. Suspendisse potenti. Suspendisse pulvinar leo non diam gravida aliquet. Vestibulum cursus, ex at venenatis tempor, nisi erat eleifend libero, nec sodales leo ligula ac nisi. In vehicula lacinia odio, tristique molestie purus congue sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel leo facilisis augue porttitor eleifend id et felis. Pellentesque quis blandit nisi. Etiam tincidunt sapien iaculis tortor pharetra ultricies. Nullam facilisis faucibus mauris tristique dapibus. Nulla bibendum tincidunt quam et imperdiet. Nulla nec magna eget orci ultrices placerat.
-
-Nulla et lectus turpis. Aliquam egestas nisi varius cursus mattis. Vivamus congue augue nulla, eu luctus metus tincidunt in. In sed ligula rhoncus, dapibus mi nec, volutpat libero. Integer sollicitudin sem sem, in placerat metus venenatis vitae. Fusce vel mauris quis enim volutpat commodo a at diam. Phasellus ut pulvinar sapien. Morbi at auctor leo. Nam eleifend elit vitae feugiat imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque arcu lorem, viverra eget velit non, hendrerit faucibus quam. Nulla ultricies mi tincidunt ligula vulputate interdum. Nunc urna magna, accumsan in eleifend vitae, mollis ut orci. Fusce gravida diam quis ante pellentesque, nec dignissim justo rhoncus. Aliquam erat volutpat.</p>
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					<span class="collapse-icon"></span>Article Title 3: short description 
+				</a>
+				<span class="date">18<sup>th</sup> May 2017</span>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+			<div class="panel-body">
+				<span class="sub-date">18<sup>th</sup> May 2017</span>
+				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			</div>
+		</div>
+	</div>
 </div>
+	<!-- Accodrion End -->
 
 <footer>
 	<div class="container-fluid">

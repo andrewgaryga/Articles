@@ -5,269 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" rel="stylesheet">
-	<style>
-		/*main*/
-		@font-face {
-			font-family: 'Computer Modern'; 
-			src: url('fonts/cmunbmr.ttf'); /*URL to font*/
-		}
-		html {
-			position: relative;
-    		min-height: 100%;
-		}
-		body {
-			font-size: 16px;
-			font-family: 'Computer Modern';
-			color: #000;
-			margin-bottom: 30px;
-		}
-		.custom-margin {
-			margin-left: 2em;
-			margin-right: 2em;
-		}
-		/*navigation*/
-		.navbar {
-			margin-bottom: 0;
-		}
-		.navbar-nav>li>a {
-			font-size: 24px;
-			text-transform: uppercase;
-			padding: 0;
-			/*margin-top: 80px;*/
-			/*color: #e74c3c;*/
-			/*new-color*/
-			color: #d41400;
-			font-weight: bold;
-		}
-		.navbar-nav>li>a {
-			margin-top: 40px;
-			margin-bottom: 40px;
-		}
-		.nav>li>a:focus, .nav>li>a:hover {
-			text-decoration: underline;
-			background-color: transparent;
-		}
-		.navbar-nav>li {
-			margin-left: 5vw;
-		}
-		.navbar-brand {
-			padding-top: 10px;
-		}
-		.navbar-brand>img {
-			width: 80px;
-		}
-		.navbar-default .navbar-toggle {
-		    border-color: #ddd;
-		}
-		.navbar-toggle {
-			border-color: #000;
-		}
-		.navbar-toggle .icon-bar {
-		    background-color: #000;
-		}
-		/*nav tabs list*/
-		.nav-tabs>li>a:hover {
-			border-color: transparent;
-			border: none;
-		}
-		.nav-tabs>li>a {
-			padding: 0;
-			border: none;
-		}
-		
-		.nav-tabs>li>a, ul#filters>li>a {
-			color: #000;
-			text-align: center;
-		}
-		.nav-tabs, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-			border: none;
-			color: #000
-		}
-		.nav-tabs>li.active>a:hover {
-			text-decoration: underline;
-		}
-		ul.nav-tabs, ul#filters{
-			display: none;
-			width: 100%;
-			margin-bottom: 3em;
-			margin-top: 2em;
-			padding-left: 0;
-		}
-		.nav-tabs>li, ul#filters>li {
-			float: none;
-			display: table-cell;
-			text-align: center;
-		}
-		ul.visible, ul#filters.visible {
-			display: table;
-		}
-		/*nav tabs content*/
-		.tab-content h4 {
-			margin-bottom: 1em;
-			margin-left: 1em;
-		}
-		.tab-content p {
-			text-align: justify;
-		}
-		/*accordion*/
-		#accordion .date {
-			float: right;
-		}
-		#accordion .date:hover{
-			text-decoration: none;
-			cursor: default;
-		}
-		.plus {
-			width: 31px;
-		}
-		.minus {
-			width: 30px;
-		}
-		.collapse-icon {
-			width: 21px;
-			height: 31px;
-			background-image: url(arrows_plus.svg);
-			background-repeat: no-repeat;
-			background-size: 21px 21px;
-			display: block;
-			margin-top: -8px;
-			float: left;
-			margin-right: 10px;
-			background-position: center;
-		}
-		.collapse-icon.minus{
-			width: 21px;
-			height: 31px;
-			background-image: url(arrows_minus.svg);
-			background-size: 20px 20px;
-			margin-top: -8px;
-			background-position: center;
-		}
-		.panel-default>.panel-heading {
-			background-color: transparent;
-		}
-		.panel-default {
-		    border-color: #000;
-		}
-		.panel-group .panel {
-			margin-bottom: 10px;
-		}
-		.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
-		     border-top: none; 
-		}
-		.topics-list {
-			text-align: right;
-		}
-		#accordion .sub-date {
-			display: none;
-		}
-		.panel-body {
-			text-align: justify;
-		}
-		footer {
-		    position: absolute;
-		    bottom: 0;
-		    width: 100%;
-		    padding-bottom: 10px;
-		}
-		/*Media*/
-		@media screen and (min-width: 1600px) {
-			.navbar-nav>li>a {
-				margin-top: 80px;
-				margin-bottom: 80px;
-			}
-			ul.nav-tabs, ul#filters {
-				margin-bottom: 4em;
-				margin-top: 1em;
-			}
-			.tab-content h4 {
-				margin-bottom: 2em;
-			}
-			.custom-margin {
-				margin-left: 4em;
-				margin-right: 4em;
-			}
-			.navbar-brand {
-    			padding-top: 50px;
-			}
-		}
-		@media screen and (min-width: 1200px) {
-			.navbar-nav>li {
-				margin-left: 9vw;
-			}
-		}
-		@media screen and (min-width: 980px) { 
-			.navbar-nav>li {
-				margin-left: 7vw;
-			}
-		}
-		@media screen and (min-width: 768px) and (max-width: 890px) { 
-			.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-			    margin-left: auto;
-			}
-		}
-		@media screen and (max-width: 890px) {
-			.navbar-brand {
-    			padding: 5px 0 0 0;
-    			margin-left: 15px;
-			}	
-			.navbar-brand>img {
-			     width: auto;
-			     height: 100%;
-			}
-			.navbar-nav>li>a {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				text-align: center;
-			}
-			.custom-margin {
-				margin-left: 1em;
-				margin-right: 1em;
-			}
-		}
-		@media screen and (max-width: 768px) {
-			.tab-content h4 {
-				margin-top: 2em;
-				margin-bottom: 1em;
-			}
-			ul.nav-tabs, ul#filters {
-				margin-bottom: 1em;
-				margin-top: 1em;
-			}
-			.tab-content h4 {
-				margin-bottom: 1em;
-			}
-			.custom-margin {
-				margin-left: 1em;
-				margin-right: 1em;
-			}
-			ul.visible, .nav-tabs>li, ul#filters>li {
-			    display: inherit;
-			}
-			.nav-tabs>li, ul#filters>li {
-			    float: left;
-			    margin-left: 15px;
-			}
-			.navbar {
-				margin-bottom: 10px;
-			}
-		}
-		@media screen and (max-width: 480px) {
-			.custom-margin {
-			    margin-left: 0;
-			    margin-right: 0;
-			}
-			#accordion .date {
-				display: none;
-			}
-			#accordion .sub-date {
-				display: inherit;
-				width: 100%;
-				text-align: right;
-				margin-top: -15px;
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -295,20 +33,44 @@
 <div class="container-fluid custom-margin">
 	
 	<ul id="filters">
-
-	  <li><a href="" data-category="topic_a">Topic A</a></li>
-	  <li><a href="" data-category="topic_b">Topic B</a></li>
-	  <li><a href="" data-category="topic_c">Topic C</a></li>
-	  <li><a href="" data-category="topic_d">Topic D</a></li>
-	  <li><a href="" data-category="topic_e">Topic E</a></li>
-	  <li><a href="" data-category="topic_f">Topic F</a></li>
-	  <li><a href="" data-category="topic_g">Topic G </a></li>
-
+		<li><a href="" data-category="all">All</a></li>
+		<li><a href="" data-category="topic_a">Topic A</a></li>
+		<li><a href="" data-category="topic_b">Topic B</a></li>
+		<li><a href="" data-category="topic_c">Topic C</a></li>
+		<li><a href="" data-category="topic_d">Topic D</a></li>
+		<li><a href="" data-category="topic_e">Topic E</a></li>
+		<li><a href="" data-category="topic_f">Topic F</a></li>
+		<li><a href="" data-category="topic_g">Topic G </a></li>
 	</ul>
 	
+	<div class="row recent">
+				
+			<div class="col-md-6 col-sm-12">
+				<div class="recent-wrap-item">
+					<h4>Recent Articles:</h4>
+					<a href="article.html" class="article-link">Article Title 1: short description</a>
+					<a href="article.html" class="article-link">Article Title 2: short description</a>
+					<a href="article.html" class="article-link">Article Title 3: short description</a>
+				</div>
+			</div>
+			
+			
+			<div class="col-md-6 col-sm-12">
+				<div class="recent-wrap-item">
+					<h4>Recent entries in 'Snacks':</h4>
+					<a href="snack.html" class="article-link">Snacks entry 1: short description</a>
+					<a href="snack.html" class="article-link">Snacks entry 2: short description</a>
+					<a href="snack.html" class="article-link">Snacks entry 3: short description</a>
+				</div>
+			</div>
+
+	</div>
+
+
+
 	<!-- Accordion -->
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-		<div class="panel panel-default topic_a topic_g topic_f topic_d">
+		<div class="panel panel-default topic_a topic_g topic_f topic_d all">
 			<div class="panel-heading" role="tab" id="headingOne">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
@@ -320,12 +82,12 @@
 			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
 				<div class="panel-body">
 					<span class="sub-date">18<sup>th</sup> May 2017</span>
-					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. <a href="article.html" class="article-link">Read more...</a>
 					<div class="topics-list"><span>Topics:</span> topic A, topic G, topic F, topic D</div>
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default topic_e topic_c">
+		<div class="panel panel-default topic_e topic_c all">
 			<div class="panel-heading" role="tab" id="headingTwo">
 				<h4 class="panel-title">
 					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -342,7 +104,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default topic_f">
+		<div class="panel panel-default topic_f all">
 			<div class="panel-heading" role="tab" id="headingThree">
 				<h4 class="panel-title">
 
@@ -360,7 +122,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default topic_g">
+		<div class="panel panel-default topic_g all">
 			<div class="panel-heading" role="tab" id="headingFour">
 				<h4 class="panel-title">
 					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -377,7 +139,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default topic_b">
+		<div class="panel panel-default topic_b all">
 			<div class="panel-heading" role="tab" id="headingFive">
 				<h4 class="panel-title">
 					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -422,6 +184,7 @@
   // filter
   $("#filters a").click(function() {
     var category = $(this).data("category");
+    $(".recent").hide();
     $("#accordion .panel").hide();
     $("#accordion .panel." + category).show();
     return false;
