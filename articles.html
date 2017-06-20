@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Articles</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" rel="stylesheet">
+</head>
+<body class="main">
+<!-- check via underscore basic check -->
+
+<nav class="navbar navbar-transparent">
+  <div class="container-fluid custom-margin">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span> 
+	  </button>
+	  <a class="navbar-brand" href="index.html"><img src="cafepsi-nu4.png" alt="" class="img-responsive"></a>
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+	  <ul class="nav navbar-nav navbar-right">
+		<li class="toggle_menu"><a>Articles</a></li>
+		<li><a href="philosophy.html">Philosophy</a></li>
+		<li><a href="interact.html">Interact</a></li>
+		<li><a href="snacks.html">Snacks</a></li>
+	  </ul>
+	</div>
+  </div>
+</nav>
+
+<div class="container-fluid custom-margin">
+	
+	<ul id="filters">
+		<li><a href="" data-category="all">All</a></li>
+		<li><a href="" data-category="topic_a">Topic A</a></li>
+		<li><a href="" data-category="topic_b">Topic B</a></li>
+		<li><a href="" data-category="topic_c">Topic C</a></li>
+		<li><a href="" data-category="topic_d">Topic D</a></li>
+		<li><a href="" data-category="topic_e">Topic E</a></li>
+		<li><a href="" data-category="topic_f">Topic F</a></li>
+		<li><a href="" data-category="topic_g">Topic G </a></li>
+	</ul>
+	
+
+	<!-- Accordion -->
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="panel panel-default topic_a topic_g topic_f topic_d all">
+			<div class="panel-heading" role="tab" id="headingOne">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+						<span class="collapse-icon"></span>Article Title 1: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. <a href="article.html" class="article-link">Read more...</a>
+					<div class="topics-list"><span>Topics:</span> topic A, topic G, topic F, topic D</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_e topic_c all">
+			<div class="panel-heading" role="tab" id="headingTwo">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<span class="collapse-icon"></span>Article Title 2: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic E, topic C</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_f all">
+			<div class="panel-heading" role="tab" id="headingThree">
+				<h4 class="panel-title">
+
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<span class="collapse-icon"></span>Article Title 3: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic F</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_g all">
+			<div class="panel-heading" role="tab" id="headingFour">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						<span class="collapse-icon"></span>Article Title 4: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic G</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default topic_b all">
+			<div class="panel-heading" role="tab" id="headingFive">
+				<h4 class="panel-title">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						<span class="collapse-icon"></span>Article Title 5: short description 
+					</a>
+					<span class="date">18<sup>th</sup> May 2017</span>
+				</h4>
+			</div>
+			<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" aria-expanded="false" style="height: 0px;">
+				<div class="panel-body">
+					<span class="sub-date">18<sup>th</sup> May 2017</span>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<div class="topics-list"><span>Topics:</span> topic B</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Accodrion End -->
+	
+
+	
+</div>
+
+<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 text-center"><span class="copyright">&copy; cafe psi 2017.</span></div>
+		</div>
+	</div>
+</footer>
+
+<!-- jQuery -->
+<script src="bootstrap/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="bootstrap/bootstrap.min.js"></script>
+<script>
+  // script
+  $(".toggle_menu").click(function(){
+	  $("#filters").toggleClass("visible");
+  });
+  // filter
+  $("#filters a").click(function() {
+    var category = $(this).data("category");
+    $(".recent").hide();
+    $("#accordion .panel").hide();
+    $("#accordion .panel." + category).show();
+    return false;
+  });
+  // icon swap
+	$(".panel-title a").click(function(){
+		$(this).children().toggleClass("minus");
+		// var parentLocation = $(this).parent();
+		// $(".date",parentLocation).toggleClass("visible");
+		// $(parentLocation + " .date").toggleClass("visible");
+		
+	});
+</script>
+
+</body>
+</html>
